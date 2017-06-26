@@ -1,0 +1,28 @@
+.loftt_index {
+	background: url(img/background.jpg) no-repeat;
+}
+
+#login_div {
+	padding: 15px;
+}
+
+#regist_div {
+	padding: 15px;
+}
+
+#btn_login {
+	width: 100%;
+}
+
+#btn_regist {
+	width: 100%;
+}
+
+.student_index {
+	width: 30px;
+	backgroundcolor: #434D57;
+}
+
+#send_super {
+	padding: 10px;
+}

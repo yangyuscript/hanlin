@@ -1,0 +1,73 @@
+/**
+ * 
+ *//**
+ * 判断用户在注册账号时的用户名是否可用
+ */
+$(function(){
+	var flag=true;
+	$("#regist_name").blur(function(){
+		var re = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+		if($("#regist_name").val()!=""&&re.test($("#regist_name").val())){
+			$.ajax({
+				url:"user_judge.do",
+				type:"post",
+				data:{
+					"user.account":$("#regist_name").val()
+				},
+				dataType:"json",
+				success:function(data){
+					if(data.result=="yes"){
+						$("#mark").show().text("用户名可用").css("color","green");
+						$("#btn_regist").html("注册");
+					}else{					
+						$("#mark").show().text("该用户名已被注册使用").css("color","red");
+						flag=false;
+						$("#btn_regist").html("注册");
+					}
+				}
+			});
+		}else{
+			$("#mark").show().text("请输入正确格式的邮箱哦！").css("color","red");
+			flag=false;
+		}		
+	});
+	$("#regist_pass2").keyup(function(){
+		if($("#regist_pass2").val()!=""){
+			if($("#regist_pass2").val()!=$("#regist_pass").val()){
+				$("#mark2").show().text("密码不一致").css("color","red");
+				$("#btn_regist").html("注册");
+				flag=false;
+			}else{
+				$("#mark2").show().text("密码一致").css("color","green");
+				$("#btn_regist").html("注册");
+			}
+		}		
+	});
+	$("#btn_regist").click(function(){
+		var that=$(this);
+		$(this).html("正在注册...").attr("disabled",true);
+		if($("#regist_name").val()==""||$("#regist_pass2").val()==""&&flag==false){
+			$("#mark3").show().text("请正确填写注册信息哦！！！").css("color","red");
+			$("#btn_regist").html("注册");
+			that.attr("disabled",false);
+		}else{
+	    
+		$.ajax({
+			url:"user_regist.do",
+			type:"post",
+			data:{
+				"user.account":$("#regist_name").val(),
+				"user.password":$("#regist_pass2").val(),
+				"basePath":$("#basePath").val()
+			},
+			dataType:"json",
+			success:function(data){
+				ShowSuccess("注册成功,请到注册邮箱中激活账号！");
+				setTimeout(function(){
+					window.location.href="loft_index.jsp";
+				},2000);
+			}
+		});
+		}
+	});
+});

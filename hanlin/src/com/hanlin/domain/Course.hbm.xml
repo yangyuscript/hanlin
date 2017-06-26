@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.hanlin.domain.Course" table="t_course">
+		<id name="courseId" column="courseId" type="java.lang.Integer">
+			<generator class="increment"></generator>
+		</id>
+		<property name="teacherId" type="java.lang.Integer">
+			<column name="teacherId"></column>
+		</property>
+		<property name="courseName" type="java.lang.String">
+			<column name="courseName"></column>
+		</property>
+		<property name="courseHead" type="java.lang.String">
+			<column name="courseHead"></column>
+		</property>
+		<property name="learningPeopleNum" type="java.lang.Integer">
+			<column name="learningPeopleNum"></column>
+		</property>
+		<property name="likeingPeopleNum" type="java.lang.Integer">
+			<column name="likeingPeopleNum"></column>
+		</property>		
+		<property name="courseIntroduction" type="java.lang.String">
+			<column name="courseIntroduction"></column>
+		</property>
+		<property name="courseTips" type="java.lang.String">
+			<column name="courseTips"></column>
+		</property>
+		<property name="courseType" type="java.lang.Integer">
+			<column name="courseType"></column>
+		</property>
+		<property name="courseSatisfied" type="java.lang.Double">
+			<column name="courseSatisfied"></column>
+		</property>
+		<property name="courseCondi" type="java.lang.Integer">
+			<column name="courseCondi"></column>
+		</property>
+		<property name="time" type="java.lang.String">
+			<column name="time"></column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,107 @@
+.course {
+	background-color: #60D4D4;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.teacher {
+	background-color: white;
+	margin-bottom:10px;
+}
+
+.top h2 {
+	padding-top: 10px;
+	text-align: center;
+}
+
+
+
+
+.teacher row {
+	margin-bottom: 10px;
+}
+
+.t {
+	margin-bottom: 10px;
+}
+
+.course_t {
+	text-align: center;
+	color: white;
+}
+
+.course_s {
+	text-align: center;
+	color: white;
+}
+
+.function_d {
+	background-color: #616F7E;
+	 text-align: center; 
+	color: white;
+}
+
+/* .load div p {
+	padding-top: 10px;
+	 padding-right: 6px; 
+	cursor: pointer;
+}
+
+.load div {
+	background-color: #434D57;
+	width: 290px;
+	height: 40px;
+	color: white;
+	border: 1px solid white;
+	text-align: center;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
+.load {
+	text-align: center;
+}
+
+.load div a {
+	style: none;
+	color: white;
+	padding-top: 10px;
+	margin-top: 10px;
+} */
+ 
+
+ .course-wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 200px;
+	height: 140px;
+}
+
+.course-wrapper img {
+	width: 200px;
+	height: 140px;
+}
+
+.learning:hover .mask-inner {
+	top: 0;
+}
+
+.course-inner {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 95%;
+	height: 96%;
+	color: white;
+	text-align: center;
+	-moz-transition: top ease 200ms;
+	-o-transition: top ease 200ms;
+	-webkit-transition: top ease 200ms;
+	transition: top ease 200ms;
+} 
+.course-inner a:hover{
+	color:yellow;
+}
+.mask-inner a:hover{
+	color:yellow;
+}

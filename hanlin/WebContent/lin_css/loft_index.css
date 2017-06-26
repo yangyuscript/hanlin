@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+body{
+	/* background:#cceed0; */
+	/*background:transparent;*/
+	/*background:url("../img/5.jpg") no-repeat center;*/
+	/*background:url("../img/6.jpg");*/
+}
+#login_div{
+	/*width:25%;*/
+	/*height:30%;*/
+	width:250px;
+	height:300px;
+	float:right;
+	margin-top:15%;
+	margin-right:17%;
+	/*margin-top:110px;*/
+	/*margin-right:160px;*/
+	color:white;	
+	background-color:#000000;/* IE6和部分IE7内核的浏览器(如QQ浏览器)下颜色被覆盖 */
+    background-color:rgba(0,0,0,0.3); /* IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂，但解析为透明 */
+}
+#regist_div{
+	/* width:25%;
+	height:30%; */
+	width:250px;
+	height:350px;
+	float:right;
+	margin-top:15%;
+	margin-right:17%;
+	/* margin-top:110px;
+	margin-right:160px; */
+	display:none;
+	color:white;	
+	background-color:#000000;/* IE6和部分IE7内核的浏览器(如QQ浏览器)下颜色被覆盖 */
+    background-color:rgba(0,0,0,0.3); /* IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂，但解析为透明 */
+}

@@ -1,0 +1,227 @@
+@CHARSET "UTF-8";
+
+.container, .container-fluid {
+	/* border:1px solid black; */
+	/* margin-right: 6px; */
+	color: #434d57;
+}
+
+a {
+	color: #434d57;
+}
+
+#head_part {
+	margin-left: -50px;
+}
+
+#head_part a {
+	text-decoration: none;
+}
+
+#head_part a:hover {
+	color: #60d4d4;
+}
+
+/* #middle_part {
+	margin-left: -50px;
+} */
+#left_part {
+	
+}
+
+#left_part a {
+	color: white;
+	text-decoration: none;
+}
+
+#left_part a:hover {
+	color: #60d4d4;
+}
+
+.function_b {
+	background-color: #53606d;
+	text-align: center;
+	color: white;
+}
+
+.function_s {
+	background-color: #616f7e;
+	text-align: center;
+	color: white;
+}
+
+#lefthead {
+	background-color: #60d4d4;
+	height: 120px;
+	text-align: center;
+}
+
+#lefthead img {
+	margin-top: 10px;
+	width: 100px;
+	height: 100px;
+}
+
+nav {
+	
+}
+
+nav .container-fluid {
+	height: 100%;
+	background-color: #434d57;
+}
+
+.foot {
+	color: white;
+	text-align: center;
+	background-color: #434d57;
+	/* height:40px; */
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.foot p {
+	/* padding-top:10px; */
+	
+}
+
+/*创建课程  */
+#content_part>.row {
+	margin-bottom: 20px;
+}
+
+#content_part a {
+	color: #434d57;
+	text-decoration: none;
+}
+
+#content_part a:hover {
+	color: #339865;
+}
+/*创建课程结束  */
+/*正在学习的课程  */
+.course_learning {
+	background-color: white;
+	margin-bottom: 15px;
+}
+
+.media-body {
+	padding-top: 10px;
+}
+/* 遮罩层 */
+.mask-wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 200px;
+	height: 140px;
+}
+
+.mask-wrapper img {
+	width: 200px;
+	height: 140px;
+}
+
+.mask-inner {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 95%;
+	height: 96%;
+	color: white;
+	text-align: center;
+	-moz-transition: top ease 200ms;
+	-o-transition: top ease 200ms;
+	-webkit-transition: top ease 200ms;
+	transition: top ease 200ms;
+}
+
+.mask-inner p {
+	padding-top: 55px;
+	color: #d0d0d0;
+	cursor: pointer;
+}
+
+.course_learning:hover .mask-inner {
+	top: 0;
+}
+
+.mask-wrapper .mask-inner {
+	background: rgba(0, 0, 0, .5);
+}
+
+/*正在学习的课程结束  */
+/*我的帖子*/
+
+/*我的帖子结束*/
+/*我的message*/
+#content_part .message-part {
+	background-color: #f5f5f6;
+}
+/*我的message结束*/
+/*我的info*/
+.info_part div {
+	background-color: #60d4d4;
+	width: 90px;
+	height: 30px;
+	color: white;
+	border: 1px solid white;
+	text-align: center;
+	cursor: pointer;
+}
+
+.info_part div p {
+	padding-top: 3px;
+	padding-right: 6px;
+	cursor: pointer;
+}
+/*我的info结束*/
+
+/*form-control1个人信息里面的生日设置*/
+.form-control1 {
+	height: 50%;
+}
+/*form-control1个人信息里面的生日设置*/
+/*右下角弹窗公告*/
+.demo {
+	width: 240px;
+	height: auto;
+	border: 1px #e0e0e0 solid;
+	position: fixed;
+	right: 10px;
+	bottom: 50px;
+	background-color: white;
+}
+
+.demo .title {
+	height: 23px;
+	line-height: 23px;
+	background-color: #f8f8f8;
+	font-size: 14px;
+	font-family: 宋体;
+	padding-left: 5px;
+	border-bottom: 1px #e0e0e0 solid;
+}
+
+.demo .title .close {
+	float: right;
+	padding-right: 4px;
+	color: red;
+	cursor: pointer;
+}
+
+.demo .title .close:hover {
+	color: purple;
+}
+
+.demoContent {
+	font-size: 12px;
+	line-height: 19px;
+	padding: 5px;
+	/* margin-left: -50px; */
+}
+
+.demoContent p {
+	text-indent: 2em;
+	
+}

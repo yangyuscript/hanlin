@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.hanlin.domain.Danmu" table="t_danmu">
+		<id name="danmuId" column="danmuId" type="java.lang.Integer">
+			<generator class="increment"></generator>
+		</id>
+		<property name="measureId" type="java.lang.Integer">
+			<column name="measureId"></column>
+		</property>
+		<property name="text" type="java.lang.String">
+			<column name="text"></column>
+		</property>
+		<property name="color" type="java.lang.String">
+			<column name="color"></column>
+		</property>
+		<property name="position" type="java.lang.Integer">
+			<column name="position"></column>
+		</property>
+		<property name="size" type="java.lang.Integer">
+			<column name="size"></column>
+		</property>		
+		<property name="time" type="java.lang.Integer">
+			<column name="time"></column>
+		</property>
+	</class>
+</hibernate-mapping>

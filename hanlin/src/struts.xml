@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 指定Web应用的默认编码，相当于调用request的setCharacterEncoding方法 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<!-- 设置浏览器是否缓存静态内容，默认值为true(生产环境下使用)，开发阶段最好关闭 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+	<!-- 当Struts2的配置文件修改后，系统是否自动重新加载配置文件，默认值为false(生产环境下使用)，开发阶段最好打开 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+
+	<!-- 开发模式下使用，这样可以打印出更详细的日志信息 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 默认的视图主题 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 把Action对象交给Spring创建和管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- Struts2处理的请求后缀,默认值是action -->
+	<constant name="struts.action.extension" value="do" />
+	<package name="default" namespace="/" extends="json-default">
+		<interceptors>
+			<interceptor name="LoginInterceptors"
+				class="com.hanlin.interceptor.LoginInterceptor">
+				<param name="excludeName">user_invokeUser,user_login,user_regist,user_judge,course_beginWebsiteB,course_getCourseDetailInfo,course_goMain</param>
+				<param name="sessionName">loginUser</param>
+			</interceptor>
+			<interceptor-stack name="myInterceptors">
+				<interceptor-ref name="LoginInterceptors"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myInterceptors"></default-interceptor-ref>
+        <!-- 适用于所有的action -->
+		
+		<!-- 定义全局Result -->
+		<global-results>
+			<!-- 当返回login视图名时，转入/login.html页面 -->
+			<result name="login" type="redirect">loft_index.jsp</result>
+		</global-results>
+		<action name="user_*" method="{1}" class="com.hanlin.action.UserAction">
+			<result type="json" name="callback">
+				<param name="root">callbackInfo</param>
+			</result>
+			<result name="invokeUser_yes">invoke.jsp</result>	
+			<result name="removeUserSession_yes" type="redirect">course_beginWebsiteB.do</result>	
+			<result name="toBeTea_yes">teacher/toBeTea.jsp</result>		
+		</action>
+		<action name="super_*" method="{1}" class="com.hanlin.action.SuperAction">
+			<result type="json" name="callback">
+				<param name="root">callbackInfo</param>
+			</result>
+			<result name="findUsersByPager_yes">super/superManagerUser.jsp</result>
+			<result name="Type_yes" type="redirect">super/superManagerCourseType.jsp</result>
+			<result name="modifyType_yes" type="redirect">super/superManagerCourseType.jsp</result>	
+			<result name="findCoursesByPager_yes">super/superIndex.jsp</result>	
+			<result name="sendMessageToTea_yes">super/superIndex.jsp</result>	
+			<result name="acceptBeTea_yes">doToBeTeaReq.jsp</result>
+			<result name="refuseBeTea_yes">doToBeTeaReq.jsp</result>
+			<result name="uploadRunpic_yes" type="redirect">super/superManagerRunPic.jsp</result>
+			<result name="deleteRunpic_yes" type="redirect">super/superManagerRunPic.jsp</result>
+			<result name="getAllBeTea_yes" type="redirect">super/doToBeTeaReq.jsp</result>
+			<result name="updateMessages_yes" type="redirect">super/superManagerMessage.jsp</result>
+			<result name="screenCourse_yes" type="redirect">super_findCoursesByPager.do?pageNum=1</result>
+			<result name="unScreenCourse_yes" type="redirect">super_findCoursesByPager.do?pageNum=1</result>
+			<result name="screenUser_yes" type="redirect">super_findUsersByPager.do?pageNum=1</result>
+			<result name="unScreenUser_yes" type="redirect">super_findUsersByPager.do?pageNum=1</result>
+		</action>
+		<action name="teacher_*" method="{1}" class="com.hanlin.action.TeacherAction">
+			<result type="json" name="callback">
+				<param name="root">callbackInfo</param>
+			</result>
+			<result name="addCourse_yes" type="redirect">teacher/foundCourse.jsp</result>
+			<result name="goToTeacher_yes" type="redirect">teacher/learningCourse.jsp</result>
+			<result name="goToTeacherCenter_yes" type="redirect">teacher/myInfo.jsp</result>
+			<result name="modifyCourseInfoB_yes">modifyCourseInfo.jsp</result>
+			<result name="modifyCourseInfoA_yes" type="redirect">teacher/managerCourse.jsp</result>
+			<result name="lookCharacter_yes" type="redirect">teacher/lookCharacter.jsp</result>
+			<result name="addSmallCharacterB_yes" type="redirect">teacher/addSmallCharacter.jsp</result>
+			<result name="addSmallCharacterA_yes" type="redirect">teacher/lookCharacter.jsp</result>
+			<result name="checkMeasure_yes" type="redirect">teacher/checkMeasure.jsp</result>
+			<result name="addExerciseB_yes">addSmallCharacterTest.jsp</result>
+			<result name="addExerciseA_yes">lookCharacter.jsp</result>
+			<result name="checkExercise_yes">modifyExercise.jsp</result>
+			<result name="modifyExercise_yes">lookCharacter.jsp</result>
+			<result name="quitCourse_yes" type="redirect">teacher/learningCourse.jsp</result>
+			<result name="modifyUser_yes" type="redirect">teacher/myInfo.jsp</result>
+		</action>
+		<action name="course_*" method="{1}" class="com.hanlin.action.CourseAction">
+		    <result type="json" name="callback">
+		        <param name="root">callbackInfo</param>
+		    </result>
+		    <result name="getCourseDetailInfo_yes" type="redirect">course/detailCourse.jsp</result>
+		    <result name="lookLearningCourseInfoB_yes">course/learningCourseInfo.jsp</result>
+		    <result name="workExerciseB_yes">teacher/workOutExercise.jsp</result>
+		    <result name="beginWebsiteB_yes">student/index.jsp</result>
+		    <result name="goMain_yes">main.jsp</result>
+		    <result name="getAnalysis_yes" type="redirect">course/courseAnalysis.jsp</result>
+		    <result name="cancleLikeCourse_yes" type="redirect">teacher/likeCourse.jsp</result>
+		</action>
+	</package>
+</struts>
+

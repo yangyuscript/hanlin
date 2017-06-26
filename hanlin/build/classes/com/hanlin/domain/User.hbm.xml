@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.hanlin.domain.User" table="t_user">
+		<id name="userId" column="userId" type="java.lang.Integer">
+			<generator class="increment"></generator>
+		</id>
+		<property name="account" type="java.lang.String">
+			<column name="account"></column>
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="password"></column>
+		</property>
+		<property name="head" type="java.lang.String">
+			<column name="head"></column>
+		</property>
+		<property name="nickname" type="java.lang.String">
+			<column name="nickname"></column>
+		</property>		
+		<property name="credits" type="java.lang.Integer">
+			<column name="credits"></column>
+		</property>
+		<property name="condi" type="java.lang.Integer">
+			<column name="condi"></column>
+		</property>
+	</class>
+</hibernate-mapping>

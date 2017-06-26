@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.hanlin.domain.Exercise" table="t_exercise">
+		<id name="exerciseId" column="exerciseId" type="java.lang.Integer">
+			<generator class="increment"></generator>
+		</id>
+		<property name="measureId" type="java.lang.Integer">
+			<column name="measureId"></column>
+		</property>
+		<property name="question" type="java.lang.String">
+			<column name="question"></column>
+		</property>
+		<property name="answer" type="java.lang.String">
+			<column name="answer"></column>
+		</property>
+		<property name="acChoice" type="java.lang.String">
+			<column name="acChoice"></column>
+		</property>
+		<property name="bcChoice" type="java.lang.String">
+			<column name="bcChoice"></column>
+		</property>
+		<property name="ccChoice" type="java.lang.String">
+			<column name="ccChoice"></column>
+		</property>
+		<property name="dcChoice" type="java.lang.String">
+			<column name="dcChoice"></column>
+		</property>
+		<property name="time" type="java.lang.String">
+			<column name="time"></column>
+		</property>	
+		<property name="courseId" type="java.lang.Integer">
+			<column name="courseId"></column>
+		</property>	
+	</class>
+</hibernate-mapping>
